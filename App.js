@@ -1,21 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  TouchableHighlight,
+  Button,
+  Alert,
+  Platform,
+  StatusBar,
+  Dimensions,
+} from "react-native";
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
+import Constants from "expo-constants";
+
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import TemplateScreen from "./app/screens/TemplateScreen";
+import ProductsScreen from "./app/screens/ProductsScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+import LoginScreen from "./app/screens/LoginScreen/LoginScreen";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <LoginScreen />;
+  return <TemplateScreen />;
+  return <AccountScreen />;
+  return <MessagesScreen />;
+  return <WelcomeScreen />;
+  return <ProductsScreen />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#efefef",
+    alignItems: "center",
+    // justifyContent: "center",
+    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Constants.statusBarHeight,
   },
 });
