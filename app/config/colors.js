@@ -1,0 +1,16 @@
+export default {
+  white: "#fff",
+  black: "#000",
+  transparent: "transparent",
+  red: "#d00",
+  grey: "#d9d9d9",
+  patientGreen: "#32b635",
+  customYellow: "#fee715",
+  customGreen: "#006b38",
+  darkGrey: "#0c0c0c",
+  mediumGrey: "#6e6969",
+  lightGrey: "#f8f4f4",
+  danger: "#ff5252",
+  cornflowerblue: "cornflowerblue",
+  darkThemeSurface: "#121212",
+};
