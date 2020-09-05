@@ -1,32 +1,31 @@
 import React from "react";
-import { View } from "react-native";
+import { FlatList, Linking, View, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../../config/colors";
 import styles from "./styles";
 
-export default function AppSocialIcons(props) {
+import mockData from "../../config/mockData";
+
+export default function AppSocialIcons({ size = 20 }) {
   return (
     <View style={styles.container}>
-      <MaterialCommunityIcons
-        name="linkedin"
-        size={30}
-        color={colors.patientGreen}
-      />
-      <MaterialCommunityIcons
-        name="facebook"
-        size={30}
-        color={colors.patientGreen}
-      />
-      <MaterialCommunityIcons
-        name="instagram"
-        size={30}
-        color={colors.patientGreen}
-      />
-      <MaterialCommunityIcons
-        name="twitter"
-        size={30}
-        color={colors.patientGreen}
+      <FlatList
+        style={styles.buttonContainer}
+        data={mockData.socialLinks}
+        keyExtractor={(link) => link.id}
+        renderItem={({ item }) => (
+          <Text
+            onPress={() => Linking.openURL(item.url)}
+            style={[styles.text, { width: size }]}
+          >
+            <MaterialCommunityIcons
+              color={colors.patientGreen}
+              name={item.icon}
+              size={size}
+            />
+          </Text>
+        )}
       />
     </View>
   );

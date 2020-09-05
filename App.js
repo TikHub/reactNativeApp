@@ -28,20 +28,16 @@ import AccountScreen from "./app/screens/AccountScreen";
 import LoginScreen from "./app/screens/LoginScreen/LoginScreen";
 
 export default function App() {
-  return <LoginScreen />;
-  return <TemplateScreen />;
-  return <AccountScreen />;
+  // return <LoginScreen />;
+  // return <TemplateScreen />;
+  // return <AccountScreen />;
   return <MessagesScreen />;
-  return <WelcomeScreen />;
-  return <ProductsScreen />;
+  // return <WelcomeScreen />;
+  // return <ProductsScreen />;
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#efefef",
-    alignItems: "center",
-    // justifyContent: "center",
     // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     paddingTop: Constants.statusBarHeight,
   },

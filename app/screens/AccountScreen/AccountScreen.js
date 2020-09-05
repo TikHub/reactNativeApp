@@ -1,31 +1,15 @@
 import React from "react";
-import { View, FlatList } from "react-native";
+import { FlatList, Text, View } from "react-native";
 
-import styles from "./styles";
-import AppScreen from "../../components/AppScreen/AppScreen";
 import AppIcon from "../../components/AppIcon/AppIcon";
-import AppUserInfo from "../../components/AppUserInfo";
-import colors from "../../config/colors";
+import AppScreen from "../../components/AppScreen/AppScreen";
 import AppSeparator from "../../components/AppSeparator/AppSeparator";
+import AppUserInfo from "../../components/AppUserInfo";
 
-const menuItems = [
-  {
-    title: "My Listings",
-    icon: {
-      name: "format-list-bulleted",
-      color: colors.white,
-      backgroundColor: colors.danger,
-    },
-  },
-  {
-    title: "My Messages",
-    icon: {
-      name: "email",
-      color: colors.white,
-      backgroundColor: colors.patientGreen,
-    },
-  },
-];
+import colors from "../../config/colors";
+import styles from "./styles";
+
+import mockData from "../../config/mockData";
 
 export default function AccountScreen(props) {
   const formatItemTitle = (item) => item.toLowerCase().replace(" ", "_");
@@ -39,9 +23,9 @@ export default function AccountScreen(props) {
         onPress={() => null}
       />
 
-      <View style={styles.itemsContainer}>
+      <View style={[styles.itemsContainer]}>
         <FlatList
-          data={menuItems}
+          data={mockData.accountMenuItems}
           keyExtractor={(item) => formatItemTitle(item.title)}
           renderItem={({ item }) => (
             <AppUserInfo

@@ -15,16 +15,12 @@ export default function WelcomeScreen() {
       //   source={require("../../assets/background.jpg")}
       style={styles.background}
     >
-      <AppHeading></AppHeading>
+      <AppHeading tagName="Benebis Delivery" />
+      <AppSocialNetworks size={30} />
       <View style={styles.buttonContainer}>
         <AppButton title="Login" onPress={handlePress} />
-        <AppButton
-          title="Register"
-          onPress={handlePress}
-          //  color="customGreen"
-        />
+        <AppButton title="Register" onPress={handlePress} />
       </View>
-      <AppSocialNetworks></AppSocialNetworks>
     </ImageBackground>
   );
 }

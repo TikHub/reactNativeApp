@@ -9,35 +9,10 @@ import AppProductDeleteAction from "../../components/AppProduct/AppProductDelete
 import AppProductShareAction from "../../components/AppProduct/AppProductShareAction";
 import colors from "../../config/colors";
 
-const initialData = [
-  {
-    id: 1,
-    title: "T1",
-    description: "D1",
-    image: "https://picsum.photos/1600/900",
-  },
-  {
-    id: 2,
-    title: "T2",
-    description: "D2",
-    image: "https://picsum.photos/1400/800",
-  },
-  {
-    id: 3,
-    title: "T3",
-    description: "D3",
-    image: "https://picsum.photos/1600/900",
-  },
-  {
-    id: 4,
-    title: "T4",
-    description: "D4",
-    image: "https://picsum.photos/1400/800",
-  },
-];
+import mockData from "../../config/mockData";
 
 export default function MessagesScreen(props) {
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState(mockData.messages);
   const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (item) => {
@@ -62,7 +37,7 @@ export default function MessagesScreen(props) {
         )}
         ItemSeparatorComponent={() => <AppSeparator size={2} />}
         refreshing={refreshing}
-        onRefresh={() => setData(initialData)}
+        onRefresh={() => setData(mockData.messages)}
       />
     </AppScreen>
   );
