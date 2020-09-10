@@ -6,22 +6,23 @@ import styles from "./styles";
 export default function AppPickerItem({
   backgroundColor,
   color,
-  label,
-  icon,
+  item,
   onPress,
 }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={[styles.container, { backgroundColor }]}>
-        {icon && (
+        {item.icon && item.icon !== null && (
           <Image
             style={styles.icon}
             source={{
-              uri: icon ? icon : "../../../assets/user.png",
+              uri: item.icon
+                ? item.icon
+                : "https://www.uokpl.rs/fpng/d/279-2790744_cannabis-clipart-png.png",
             }}
           />
         )}
-        <Text style={[styles.label, { color }]}>{label}</Text>
+        <Text style={[styles.label, { color }]}>{item.label}</Text>
       </View>
     </TouchableOpacity>
   );

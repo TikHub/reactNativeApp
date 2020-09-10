@@ -5,6 +5,7 @@ import AppIcon from "../../components/AppIcon/AppIcon";
 import AppScreen from "../../components/AppScreen/AppScreen";
 import AppSeparator from "../../components/AppSeparator/AppSeparator";
 import AppUserInfo from "../../components/AppUserInfo";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 import colors from "../../config/colors";
 import styles from "./styles";
@@ -17,10 +18,11 @@ export default function AccountScreen(props) {
   return (
     <AppScreen background={colors.grey}>
       <AppUserInfo
-        title="Tigran Soghomonyan"
-        subTitle="soghomonyantigran@gmail.com"
-        uri={require("../../assets/user.png")}
+        hasChevron
         onPress={() => null}
+        subTitle="soghomonyantigran@gmail.com"
+        title="Tigran Soghomonyan"
+        uri={require("../../assets/user.png")}
       />
 
       <View style={[styles.itemsContainer]}>
@@ -47,9 +49,10 @@ export default function AccountScreen(props) {
         title={"Log out"}
         IconComponent={
           <AppIcon
-            name={"logout"}
-            color={colors.white}
+            name={"exit-run"}
             background={colors.danger}
+            color={colors.white}
+            // IconTypeComponent={FontAwesome5}
             size={60}
           />
         }

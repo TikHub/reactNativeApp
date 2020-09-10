@@ -19,6 +19,14 @@ const mockData = {
       },
     },
   ],
+  categories: [
+    { label: "Indica", value: 1, icon: null },
+    { label: "Sativa", value: 2, icon: null },
+    { label: "Drink", value: 3, icon: null },
+    { label: "Oil", value: 4, icon: null },
+    { label: "Preroll", value: 5, icon: null },
+    { label: "Other", value: 6, icon: null },
+  ],
   messages: [
     {
       id: 1,

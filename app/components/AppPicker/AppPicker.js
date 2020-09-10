@@ -11,26 +11,29 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import styles from "./styles";
-import defaultStyles from "../../config/defaultStyles";
 import AppButton from "../AppButton";
 import AppScreen from "../AppScreen";
 import AppPickerItem from "./AppPickerItem";
 import AppSeparator from "../AppSeparator/AppSeparator";
 import AppIcon from "../AppIcon/AppIcon";
 
+import styles from "./styles";
+import defaultStyles from "../../config/defaultStyles";
+
 export default function AppPicker({
-  pickerBackgroundColor,
-  pickerItemBackgroundColor,
+  PickerItemComponent = AppPickerItem,
   closeIconPosition = "start",
-  textColor,
+  iconColor,
   iconName,
   iconSize = 25,
-  iconColor,
   items,
   onSelectItem,
+  pickerBackgroundColor = defaultStyles.colors.lightGrey,
+  pickerItemBackgroundColor = defaultStyles.colors.mediumGrey,
   selectedItem,
   text,
+  textColor,
+  width = "100%",
   ...textInputProps
 }) {
   const [modalState, setModalState] = useState(false);
@@ -60,9 +63,12 @@ export default function AppPicker({
     <>
       <TouchableWithoutFeedback onPress={() => setModalState(true)}>
         <View
-          style={[styles.container, { backgroundColor: pickerBackgroundColor }]}
+          style={[
+            styles.container,
+            { backgroundColor: pickerBackgroundColor, width },
+          ]}
         >
-          {selectedItem ? (
+          {selectedItem && iconName ? (
             <Image
               style={styles.selectedImage}
               source={{
@@ -94,7 +100,7 @@ export default function AppPicker({
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalState} animationType="slide">
-        <AppScreen>
+        <AppScreen style={styles.modal}>
           <AppIcon
             background={defaultStyles.colors.transparent}
             color={defaultStyles.colors.patientGreen}
@@ -107,9 +113,8 @@ export default function AppPicker({
             data={items}
             keyExtractor={(item) => formatTitleForID(item.label)}
             renderItem={({ item }) => (
-              <AppPickerItem
-                icon={item.icon}
-                label={item.label}
+              <PickerItemComponent
+                item={item}
                 backgroundColor={pickerItemBackgroundColor}
                 color={defaultStyles.colors.white}
                 onPress={() => {

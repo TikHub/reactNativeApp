@@ -7,7 +7,7 @@ import styles from "./styles";
 
 import mockData from "../../config/mockData";
 
-export default function AppSocialIcons({ size = 20 }) {
+export default function AppSocialIcons({ iconColumns, size = 20 }) {
   return (
     <View style={styles.container}>
       <FlatList
@@ -26,6 +26,7 @@ export default function AppSocialIcons({ size = 20 }) {
             />
           </Text>
         )}
+        numColumns={iconColumns ? mockData.socialLinks.length : 0}
       />
     </View>
   );

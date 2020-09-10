@@ -10,6 +10,7 @@ export default function AppInput({
   iconSize = 25,
   iconColor,
   hasError,
+  width = "100%",
   ...textInputProps
 }) {
   return (
@@ -20,6 +21,7 @@ export default function AppInput({
           borderColor: hasError
             ? defaultStyles.colors.danger
             : defaultStyles.colors.transparent,
+          width,
         },
       ]}
     >

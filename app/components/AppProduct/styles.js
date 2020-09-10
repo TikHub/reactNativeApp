@@ -5,12 +5,13 @@ import colors from "../../config/colors";
 const styles = StyleSheet.create({
   wrapper: {
     alignItems: "center",
+    padding: 15,
   },
   product: {
     height: 300,
-    width: "90%",
+    width: "100%%",
     backgroundColor: "#fff",
-    borderRadius: 30,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: "rgba(0, 0, 0, .1)",
     overflow: "hidden",

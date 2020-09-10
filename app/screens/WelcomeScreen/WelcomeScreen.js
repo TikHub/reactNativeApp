@@ -21,6 +21,7 @@ export default function WelcomeScreen() {
         <AppButton title="Login" onPress={handlePress} />
         <AppButton title="Register" onPress={handlePress} />
       </View>
+      {/* <AppSocialNetworks size={30} /> */}
     </ImageBackground>
   );
 }

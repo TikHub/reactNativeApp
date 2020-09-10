@@ -20,20 +20,22 @@ import {
 } from "@react-native-community/hooks";
 import Constants from "expo-constants";
 
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import TemplateScreen from "./app/screens/TemplateScreen";
-import ProductsScreen from "./app/screens/ProductsScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
 import AccountScreen from "./app/screens/AccountScreen";
-import LoginScreen from "./app/screens/LoginScreen/LoginScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import LoginScreen from "./app/screens/LoginScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
+import ProductsScreen from "./app/screens/ProductsScreen";
+import TemplateScreen from "./app/screens/TemplateScreen";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
+  // return <ListingEditScreen />;
   // return <LoginScreen />;
   // return <TemplateScreen />;
   // return <AccountScreen />;
-  return <MessagesScreen />;
-  // return <WelcomeScreen />;
-  // return <ProductsScreen />;
+  // return <MessagesScreen />;
+  return <WelcomeScreen />;
+  return <ProductsScreen />;
 }
 
 const styles = StyleSheet.create({

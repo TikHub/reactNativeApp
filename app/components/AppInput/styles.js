@@ -4,11 +4,11 @@ import defaultStyles from "../../config/defaultStyles";
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
     backgroundColor: colors.lightGrey,
     borderRadius: 10,
     borderWidth: 1,
     flexDirection: "row",
+    alignItems: "center",
     marginVertical: 10,
     padding: 10,
   },

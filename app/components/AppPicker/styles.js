@@ -4,16 +4,20 @@ import defaultStyles from "../../config/defaultStyles";
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
     backgroundColor: defaultStyles.colors.lightGrey,
-    borderRadius: 50,
+    borderColor: defaultStyles.colors.transparent,
+    borderRadius: 10,
+    borderWidth: 1,
     flexDirection: "row",
     alignItems: "center",
     marginVertical: 10,
-    padding: 5,
+    padding: 10,
   },
   icon: {
     marginRight: 10,
+  },
+  modal: {
+    paddingHorizontal: 15,
   },
   selectedImage: {
     marginRight: 10,
