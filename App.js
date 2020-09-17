@@ -21,6 +21,7 @@ import {
 import Constants from "expo-constants";
 
 import AccountScreen from "./app/screens/AccountScreen";
+import AccountSettingsScreen from "./app/screens/AccountSettingsScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
@@ -29,13 +30,14 @@ import TemplateScreen from "./app/screens/TemplateScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
-  // return <ListingEditScreen />;
+  return <ListingEditScreen />;
   // return <LoginScreen />;
   // return <TemplateScreen />;
   // return <AccountScreen />;
+  return <AccountSettingsScreen />;
   // return <MessagesScreen />;
-  return <WelcomeScreen />;
-  return <ProductsScreen />;
+  // return <WelcomeScreen />;
+  // return <ProductsScreen />;
 }
 
 const styles = StyleSheet.create({

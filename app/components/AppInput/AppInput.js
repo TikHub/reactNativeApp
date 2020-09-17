@@ -9,6 +9,7 @@ export default function AppInput({
   iconName,
   iconSize = 25,
   iconColor,
+  multiline,
   hasError,
   width = "100%",
   ...textInputProps
@@ -34,7 +35,7 @@ export default function AppInput({
         />
       )}
       <TextInput
-        multiline
+        multiline={multiline}
         style={[
           defaultStyles.textInput,
           {

@@ -1,5 +1,7 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, Image } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
 import * as Yup from "yup";
 
 import {
@@ -8,6 +10,10 @@ import {
   AppFormPicker,
   AppSubmitButton,
 } from "../../components/forms";
+import AppButton from "../../components/AppButton";
+import AppImageInput from "../../components/AppImageInput";
+import AppImageInputSingle from "../../components/AppImageInputSingle";
+import AppImageInputList from "../../components/AppImageInputList";
 import AppScreen from "../../components/AppScreen";
 
 import defaultStyles from "../../config/defaultStyles";
@@ -24,8 +30,30 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function ListingEditScreen(props) {
+  const [imageUris, setImageUris] = useState([]);
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
+  };
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  };
   return (
     <AppScreen style={{ paddingHorizontal: 10 }}>
+      <AppImageInputList
+        allowsEditing
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      />
+
+      {/* <AppImageInputSingle
+        // allowsEditing
+        background={defaultStyles.colors.lightGrey}
+        color={defaultStyles.colors.mediumGrey}
+        name="camera"
+        radius={15}
+        size={100}
+      /> */}
       <AppForm
         initialValues={{
           title: "",

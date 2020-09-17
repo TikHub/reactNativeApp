@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   button: {
     width: "100%",
     height: 60,
-    borderRadius: 20,
     backgroundColor: colors.patientGreen,
     borderColor: colors.patientGreen,
     marginTop: 8,

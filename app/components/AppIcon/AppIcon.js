@@ -7,10 +7,12 @@ import styles from "./styles";
 
 export default function AppIcon({
   background = colors.black,
+  circle,
   color = colors.white,
   IconTypeComponent = MaterialCommunityIcons,
   name = "trash-can",
   onPress,
+  radius = 20,
   size = 40,
   style,
 }) {
@@ -23,7 +25,7 @@ export default function AppIcon({
             height: size,
             width: size,
             backgroundColor: background,
-            borderRadius: size / 2,
+            borderRadius: circle ? size / 2 : radius,
           },
           style,
         ]}
